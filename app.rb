@@ -57,7 +57,7 @@ class HangpersonApp < Sinatra::Base
     elsif @game.check_win_or_lose==:lose
       erb :lose
     else
-      redirect '/guess' # You may change/remove this line
+      erb :guess # You may change/remove this line
     end
   end
   
