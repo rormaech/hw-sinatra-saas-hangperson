@@ -63,12 +63,12 @@ class HangpersonApp < Sinatra::Base
   
   get '/win' do
     flash[:message]="You Win!"
-    #erb :win # You may change/remove this line
+    erb :win # You may change/remove this line
   end
   
   get '/lose' do
     flash[:message]="Sorry, you lose!"
-    #erb :lose # You may change/remove this line
+    erb :lose # You may change/remove this line
   end
   
 end
