@@ -57,18 +57,18 @@ class HangpersonApp < Sinatra::Base
     elsif @game.check_win_or_lose==:lose
       erb :lose
     else
-      redirect '/show' # You may change/remove this line
+      erb :show # You may change/remove this line
     end
   end
   
   get '/win' do
     flash[:message]="You Win!"
-    erb :win # You may change/remove this line
+    #erb :win # You may change/remove this line
   end
   
   get '/lose' do
     flash[:message]="Sorry, you lose!"
-    erb :lose # You may change/remove this line
+    #erb :lose # You may change/remove this line
   end
   
 end
