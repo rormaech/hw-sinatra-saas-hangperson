@@ -57,7 +57,7 @@ class HangpersonApp < Sinatra::Base
     elsif @game.check_win_or_lose==:lose
       erb :lose
     else
-      erb :show # You may change/remove this line
+      #erb :show # You may change/remove this line
     end
   end
   
