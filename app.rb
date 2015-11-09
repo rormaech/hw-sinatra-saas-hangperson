@@ -43,8 +43,6 @@ class HangpersonApp < Sinatra::Base
     puts dep
     if dep==false
       flash[:message]="You have already used that letter."
-    elsif dep==nil
-      flash[:message]="Wrong input."
     end
     redirect '/show'
   end
@@ -64,12 +62,12 @@ class HangpersonApp < Sinatra::Base
     end
   end
   
-  get '/win' do
+  post '/win' do
     flash[:message]="You Win!"
     erb :win # You may change/remove this line
   end
   
-  get '/lose' do
+  post '/lose' do
     flash[:message]="Sorry, you lose!"
     erb :lose # You may change/remove this line
   end
