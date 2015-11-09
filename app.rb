@@ -40,7 +40,9 @@ class HangpersonApp < Sinatra::Base
   post '/guess' do
     letter = params[:guess].to_s[0]
     dep=@game.guess(letter)
-    puts dep
+    if letter == ''
+      flash[:message]="A blank space is not permmited."
+    end
     if dep==false
       flash[:message]="You have already used that letter."
     end
@@ -54,11 +56,11 @@ class HangpersonApp < Sinatra::Base
   # wrong_guesses and word_with_guesses from @game.
   get '/show' do
     if @game.check_win_or_lose==:win 
-      redirect '/win'
+      erb :win
     elsif @game.check_win_or_lose==:lose
-      redirect '/lose'
+      erb :lose
     else
-      redirect '/show' # You may change/remove this line
+      erb :show # You may change/remove this line
     end
   end
   
